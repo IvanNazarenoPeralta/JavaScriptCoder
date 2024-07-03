@@ -15,7 +15,7 @@ function login() {
         alert('ERROR. TE QUEDAN '+i+'intentos')}}
 return ingresar;
 }
-let tasa = 75;
+let tasa = 34.45;
 if (login ()){
     let opcion = prompt('ingrese una opcion: \n1- Conocé la tasa vigente. \n2- Simulador de plazo fijo. \n3- Politica de inversion. \n Presiona X para finalizar.');
     while(opcion != 'X' && opcion != 'x'){
