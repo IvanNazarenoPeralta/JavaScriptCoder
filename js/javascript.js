@@ -1,14 +1,38 @@
 
-let Name = prompt('Ingrese su nombre y apellido');
-let savedPIN = '123';
+class Usuario {
+
+    constructor(nombre, apellido, contrasenia) {
+        this.nombre = nombre.toUpperCase();
+        this.apellido = apellido.toUpperCase();
+        this.contrasenia = contrasenia;
+    }
+}
+const usuarios= [
+    new Usuario('pruebaNombre','pruebaApellido', '1569'),
+    new Usuario( 'Ivan', 'Peralta', 'Qwerty123'),
+    new Usuario('Lionel', 'Messi', 'Qwerty321'),
+    new Usuario('el', 'Profesor','lala1')];
+    console.log(usuarios);
+
+
+let nombreIngresado = prompt('Ingrese su nombre');
+let apellidoIngresado = prompt('Ingrese su apellido');
+let contraseniaIngresada = prompt('Ingrese su nueva contraseña');
+
+const usuario = new Usuario(nombreIngresado, apellidoIngresado, contraseniaIngresada);
+usuarios.push(usuario);
+
+const filtrado = usuarios.filter((Usuario)=>Usuario.contrasenia.toUpperCase().includes(contraseniaIngresada.toLocaleUpperCase()));
+
+console.log(filtrado);
 
 function login() {
     let ingresar = false;
 
     for (let i = 2; i >= 0; i--){
         let userPIN = prompt('Ingresa tu constraseña. Tienes '+(i+1)+' intentos');
-        if  (userPIN === savedPIN){
-            alert('hola '+Name+' bienvenida al simulador de plazo fijo.');;
+        if  (userPIN === contraseniaIngresada){
+            alert('hola '+nombreIngresado+' bienvenida al simulador de plazo fijo.');;
             ingresar = true;
             break;}
         else{
