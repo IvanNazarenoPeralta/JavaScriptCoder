@@ -1,26 +1,97 @@
 <html>
 <head>
-<title>Simulador de plazo fijo</title>
-<!-- <link rel="stylesheet"  href="estilos.css">-->
-<link rel="shortcur icon"   type="plazo fijo.jpg"  href="plazo fijo.jpg">
+    <title>Simulador de plazo fijo</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcur icon" type="plazo fijo.jpg" href="plazo fijo.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="simulador de plazo fijo">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 </head>
+
 <body>
-    
-    <section class="wrapper">
-        <section class="main">
-            <article>
-<h2>Simula tu plazo fijo</h2>
-                 <p>Bienvendio al simulador de plazo fijo. Desde aqui, podras calcular cuanto dinero podras <strong>generar</strong> por mes inviertiendo tu dinero con nosotros.</p>
-                <h4>Tasas de interes</h4>
-                <p>Las tasas que utilizamos son las publicadas por el banco central de la Republica Argentina de referencia para este tipo de operaciones. En el caso que desees comprar las tasas de interes podes hacerlo en el siguiente link. <a href="https://www.bcra.gob.ar/BCRAyVos/Plazos_fijos_online.asp">Compara las tasas vigentes</a> </p>
-            </article>
+    <header>
+        <h1> Simulá tu Plazo Fijo </h1>
+        <nav id="loginBar" class="navbar navbar-light loginBar">
+            <div class="container-fluid">
+                <form class="d-flex">
+                    <button id="btnModalLogin" class="btn btn-outline-primary me-2 toggles" type="button"
+                        data-bs-toggle="modal" data-bs-target="#modalLogin">Ingresar</button>
+                    <button id="btnLogout" class="btn btn-outline-secondary d-none toggles" type="button">Salir</button>
+                    <p id="nombreUsuario" class="d-none toggles"></p>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <section id="guest" class="toggles">
+            <h2>Contenido para invitados</h2>
+            <h2>Simula tu plazo fijo</h2>
+            <p>Bienvendio al simulador de plazo fijo. Desde aqui, podras calcular cuanto dinero podras
+                <strong>generar</strong> por mes inviertiendo tu dinero con nosotros.</p>
+            <h4>Tasas de interes</h4>
+            <p>Las tasas que utilizamos son las publicadas por el banco central de la Republica Argentina de referencia
+                para este tipo de operaciones. En el caso que desees comprar las tasas de interes podes hacerlo en el
+                siguiente link. <a href="https://www.bcra.gob.ar/BCRAyVos/Plazos_fijos_online.asp">Compara las tasas
+                    vigentes</a> </p>
+
+            <h4>Politica de garantia</h4>
+            <p>Los depósitos en pesos y en moneda extranjera cuentan con la garantía de hasta $ 1.500.000. En las
+                operaciones a nombre de dos o más personas, la garantía se prorrateará entre sus titulares. En ningún
+                caso, el total de la garantía por persona y por depósito podrá exceder de $ 1.500.000, cualquiera sea el
+                número de cuentas y/o depósitos. Ley 24.485, Decreto N° 540/95 y modificatorios y Com. "A" 2337 y sus
+                modificatorias y complementarias. Se encuentran excluidos los captados a tasas superiores a la de
+                referencia conforme a los límites establecidos por el Banco Central, los adquiridos por endoso y los
+                efectuados por personas vinculadas a la entidad financiera.</p>
+
+            <p> <u> Si querés ver más contenido, por favor <span class="fakeAncla" data-bs-toggle="modal"
+                    data-bs-target="#modalLogin"><strong>identificate</strong> </span></u></p>
+            <div class="modal " id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title" id="modalLoginLabel">Ingresá</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Cerrar"></button>
+                        </div>
+                        <div class="modal-body py-2 px-4">
+                            <input id="mailLogin" class="form-control my-4" type="email"
+                                placeholder="Ingresa tu correo electrónico" required>
+                            <input id="passwordLogin" class="form-control my-4" type="password"
+                                placeholder="Ingresa tu contraseña" required>
+
+                        </div>
+                        <div class="modal-footer d-block">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="recordarme">
+                                <label class="form-check-label" for="recordarme">
+                                    Recordarme en este equipo
+                                </label>
+                            </div>
+                            <button class="btn btn-outline-primary" id="login" type="submit">Ingresar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
-    </section>
 
-  <img src="plazo fijo.jpg" width="250"  alt="logotipo Ivan P-" title="logotipo Ivan P."/>
+        <section id="logged" class="d-none toggles">
+            <h2>Contenido para usuarios logueados</h2>
+            <p>Comienza a simular tu plazo fijo.</p>
 
-<script src="js/javascript.js"></script>
-</body>
+        </section>
+    </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+        <footer>simulador creado por Ivan peralta </footer>
 
-</html>
+        <script src="js/javascript.js"></script>
+    </body>
+    
+    
+    </html>
